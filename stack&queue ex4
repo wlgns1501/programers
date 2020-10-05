@@ -1,0 +1,37 @@
+import collections
+
+class Printing(object):
+
+    def __init__(self, important, location):
+        self.important = important
+        self.location = location
+        self.queue = []
+
+    def push(self, document):
+        self.important.append()
+
+    def pop(self):
+        printed = self.queue.index(self.location)
+        # printed = self.location
+        print(printed)
+        return printed
+
+def solution(priorities, location):
+    printing = Printing(priorities, location)
+    location = priorities[location]
+    print(location)
+    priorities.sort(reverse=True)
+    print(priorities)
+    for i in range(len(priorities)):
+        printing.queue.append(priorities)
+    answer = printing.queue.index(priorities[location])
+    # answer = printing.queue.rotate()
+    print(answer)
+    return answer
+
+def main():
+    print(solution([2,1,3,2], 2))
+    print(solution([1,1,9,1,1], 0))
+
+if __name__ == '__main__':
+    main()
